@@ -1,0 +1,9 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choise_set.all %}
+    <li>{{ choice.choise_text }} -- {{ choices.votes }} vote {{ choices.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detatil' question.id %}">Vote again?</a>
